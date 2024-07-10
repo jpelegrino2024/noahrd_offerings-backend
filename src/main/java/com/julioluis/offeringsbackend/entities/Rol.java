@@ -17,7 +17,7 @@ public class Rol {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String rolName;
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinTable(name = "rol_authority",
             joinColumns = @JoinColumn(name = "rol_id",referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
